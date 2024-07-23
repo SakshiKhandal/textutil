@@ -35,13 +35,13 @@ export default function TextForm(props) {
         <div className="mb-3">
             <textarea className="form-control" value={text} onChange= {handleOnChange} style={{backgroundColor: props.mode==="dark"?"black":"white", color: props.mode==="dark"?"white":"black"}} id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-2 " onClick={handleDownClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary mx-2 " onClick={handleClearClick}>Clear</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button className="btn btn-primary mx-2 my-1 " onClick={handleDownClick}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-2 my-1 " onClick={handleClearClick}>Clear</button>
     </div>
     <div className=" container my-3" >
         <h1>your text summmary</h1>
-        <p>{text.split(" ").length} words and {text.length} charaters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} charaters</p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"enter your text in the text box above to preview here"}</p>

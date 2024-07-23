@@ -37,7 +37,7 @@ export default function App() {
   }
   return (
     <>
-      <Router>
+    <Router>
       {/* <Navbar title = {"TextUtils"} aboutText = {"About Us"}/> */}
       <Navbar title="TextUtils" aboutText = {"About"} mode = {mode}  toggleMode={toggleMode}/>
       <Alert alert = {alert}/>
@@ -45,11 +45,11 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
       renders the first one that matches the current URL. */}
       <div className="container my-3">
-      <Routes>
-        <Route path="/about" element={<AboutUs/>} />
-        <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/>} />
-      </Routes>
-        
+        <Routes>
+          <Route path="/about" element={<AboutUs mode={mode} />} />
+          <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
+        </Routes>
+      {/* <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/> */}
       </div>
     </Router>
 
